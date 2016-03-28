@@ -14,6 +14,16 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def index
+		user = User.all
+
+		if user
+			render json: { users: user }, status: 200
+		end
+	end
+
+
+
 	private
 
 	def user_params
