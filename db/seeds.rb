@@ -5,9 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-filename = 'db/lib/tasks/yelp_api_exercise_restaurant.json'
-options = {
-  :key_mapping => {:unwanted_row => nil, :old_row_name => :new_name},
-  # :value_converters => {:start_time => DateConverter, :end_time => DateConverter}
-}
+filename = 'db/lib/assets/yelp_api_exercise_restaurant.json'
+# options = {
+#   :key_mapping => {:unwanted_row => nil, :old_row_name => :new_name},
+#   # :value_converters => {:start_time => DateConverter, :end_time => DateConverter}
+# }
 
