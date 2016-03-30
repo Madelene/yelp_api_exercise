@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
 
-  get '/users'              => 'users#index'
-  post '/sign_up'           => 'users#create'
+  get  '/users'                       => 'users#index'
+  post '/sign_up'                     => 'users#create'
 
-  get '/restaurants'        => 'restaurants#index'
+
+
+  get  '/restaurants'                 => 'restaurants#index'
+  post '/restaurants/sign_up'         => 'restaurants#create'
+  post '/update_restaurant/:id'       => 'restaurants#update'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
