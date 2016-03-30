@@ -17,5 +17,12 @@ class UserFoodsController < ApplicationController
 		end
 	end
 
+	def stop_favoriting
+  		unfavorite_food = UserFood.find_by(food_id: food_id, user_id: user_id)
+  		unfavorite_food.unfavorite
+
+  		render json: { data: "You have now unfavorited this type of food" }, status: 200
+  	end
+
 
 end
