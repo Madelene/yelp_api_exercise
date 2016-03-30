@@ -11,15 +11,19 @@ class UserRestaurantsController < ApplicationController
 		if favoriting
 			name = Restaurant.where(id: restaurant_id).pluck(:name)
 			favoriting.save
-			# name(following: true).save
-			# no_name = Restaurant.where(id: restaurant_id) == nil
+	
 			render json: { restaurant: name }, status: 200
 		else 
 			render json: { message: "You have not favorited any restaurants yet" }, status: 200
 		end
-
 	end
 
-  
+  def stop_favoriting
+  	unfavorite_restaurant = UserRestaurant.find_by(restaurant_id: restaurant_id, user_id: user_id)
+  	unfavorite_restaurant.unfavorite
 
+  	render json: { data: "You have now unfavorited this restaurant" }, status: 200
+  end
+
+  
 end

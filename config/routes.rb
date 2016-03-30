@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
 
-  get  '/users'                       => 'users#index'
-  post '/sign_up'                     => 'users#create'
+  get  '/users'                                            => 'users#index'
+  post '/sign_up'                                          => 'users#create'
 
 
 
-  get  '/restaurants'                 => 'restaurants#index'
-  post '/restaurants/sign_up'         => 'restaurants#create'
-  post '/update_restaurant/:id'       => 'restaurants#update'
-  get  '/destroy_restaurant/:id'      => 'restaurants#destroy'
+  get  '/restaurants'                                      => 'restaurants#index'
+  post '/restaurants/sign_up'                              => 'restaurants#create'
+  post '/update_restaurant/:id'                            => 'restaurants#update'
+  get  '/destroy_restaurant/:id'                           => 'restaurants#destroy'
 
-  post '/favoriting_restaurants'       => 'user_restaurants#favorite'
+  post '/favoriting_restaurants'                           => 'user_restaurants#favorite'
+  get  '/unfavorite_restaurants/:restaurant_id/:user_id'   => 'user_restaurants#stop_favoriting'
 
 
 
