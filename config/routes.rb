@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post '/update_restaurant/:id'       => 'restaurants#update'
   get  '/destroy_restaurant/:id'      => 'restaurants#destroy'
 
+  post '/favoriting_restaurants'       => 'user_restaurants#favorite'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
