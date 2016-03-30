@@ -39,6 +39,12 @@ class RestaurantsController < ApplicationController
       end
   end  
 
+  def destroy
+  	destroyed_restaurant = Restaurant.find_by(id: id)
+    destroyed_restaurant.disable
+    render json: { data: "Restaurant is now inactive"}, status: 200
+  end
+
 
 
 
