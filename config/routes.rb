@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get  '/unfavorite_restaurants/:restaurant_id/:user_id'   => 'user_restaurants#stop_favoriting'
   get  '/favorite_restaurants/:user_id'                    => 'user_restaurants#favorite_restaurants'
 
+  post '/favoriting_foods'                                => 'user_foods#favorite'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
