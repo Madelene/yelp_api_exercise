@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   get  '/users'                                            => 'users#index'
   post '/sign_up'                                          => 'users#create'
 
-
-
   get  '/restaurants'                                      => 'restaurants#index'
   post '/restaurants/sign_up'                              => 'restaurants#create'
   post '/update_restaurant/:id'                            => 'restaurants#update'
@@ -16,6 +14,7 @@ Rails.application.routes.draw do
 
   post '/favoriting_foods'                                 => 'user_foods#favorite'
   get  '/unfavorite_foods/:food_id/:user_id'               => 'user_foods#stop_favoriting'
+  get  '/favorite_foods/:user_id'                          => 'user_foods#favorite_foods'
 
 
 
