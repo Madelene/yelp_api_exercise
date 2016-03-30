@@ -33,9 +33,5 @@ class UserRestaurantsController < ApplicationController
   	else 
   		render json: { favorite_restaurants: list_of_faves }, status: 200
   	end
-
-
   end
-
-  
 end
