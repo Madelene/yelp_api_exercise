@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   post '/favoriting_restaurants'                           => 'user_restaurants#favorite'
   get  '/unfavorite_restaurants/:restaurant_id/:user_id'   => 'user_restaurants#stop_favoriting'
+  get  '/favorite_restaurants/:user_id'                    => 'user_restaurants#favorite_restaurants'
 
 
 

@@ -10,7 +10,7 @@ class UserRestaurantsController < ApplicationController
 		
 		if favoriting
 			name = Restaurant.where(id: restaurant_id).pluck(:name)
-			favoriting.save
+			favoriting.save!
 	
 			render json: { restaurant: name }, status: 200
 		else 
@@ -23,6 +23,18 @@ class UserRestaurantsController < ApplicationController
   	unfavorite_restaurant.unfavorite
 
   	render json: { data: "You have now unfavorited this restaurant" }, status: 200
+  end
+
+  def favorite_restaurants
+  	list_of_faves = UserRestaurant.where(user_id: user_id).all 
+  	
+  	if list_of_faves == []
+  		render json: { message: "You still need to favorite some restaurants!" }, status: 200
+  	else 
+  		render json: { favorite_restaurants: list_of_faves }, status: 200
+  	end
+
+
   end
 
   
