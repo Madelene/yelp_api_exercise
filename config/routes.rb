@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get  '/users'                                            => 'users#index'
-  post '/sign_up'                                          => 'users#create'
+  resources :restaurants, only: [:index, :create, :update, :destroy] 
+  resources :users, only: [:create, :index]
 
   post '/favoriting_restaurants'                           => 'user_restaurants#favorite'
   get  '/unfavorite_restaurants/:restaurant_id/:user_id'   => 'user_restaurants#stop_favoriting'
@@ -12,12 +12,6 @@ Rails.application.routes.draw do
   get  '/favorite_foods/:user_id'                          => 'user_foods#favorite_foods'
 
   post '/follow_users'                                     => 'follows#following'
-
-
-  resources :restaurants, only: [:index, :create, :update, :destroy] 
-
-  
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
