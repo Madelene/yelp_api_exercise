@@ -3,6 +3,7 @@ class CreateFollows < ActiveRecord::Migration
     create_table :follows do |t|
       t.integer :follower_id
       t.integer :followee_id
+      t.integer :user_id
 
       t.timestamps null: false
     end
