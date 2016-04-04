@@ -8,9 +8,9 @@ class FollowsController < ApplicationController
     follow = Follow.new(follower_params).save
 
     if follow
-      render json: { follow: follow.as_json }, status: 200
+      render json: { message: "You are now following #{target_id}" }, status: 200
     else 
-      render json: { message: "Please try again" }, status: 200
+      render json: { message: "You already follow this person or restaurant" }, status: 200
     end
   end
 
