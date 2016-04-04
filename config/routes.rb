@@ -3,11 +3,6 @@ Rails.application.routes.draw do
   get  '/users'                                            => 'users#index'
   post '/sign_up'                                          => 'users#create'
 
-  get  '/restaurants'                                      => 'restaurants#index'
-  post '/restaurants/sign_up'                              => 'restaurants#create'
-  post '/update_restaurant/:id'                            => 'restaurants#update'
-  get  '/destroy_restaurant/:id'                           => 'restaurants#destroy'
-
   post '/favoriting_restaurants'                           => 'user_restaurants#favorite'
   get  '/unfavorite_restaurants/:restaurant_id/:user_id'   => 'user_restaurants#stop_favoriting'
   get  '/favorite_restaurants/:user_id'                    => 'user_restaurants#favorite_restaurants'
@@ -16,6 +11,12 @@ Rails.application.routes.draw do
   get  '/unfavorite_foods/:food_id/:user_id'               => 'user_foods#stop_favoriting'
   get  '/favorite_foods/:user_id'                          => 'user_foods#favorite_foods'
 
+  post '/follow_users'                                     => 'follows#following'
+
+
+  resources :restaurants, only: [:index, :create, :update, :destroy] 
+
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
