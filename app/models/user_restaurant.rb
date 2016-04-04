@@ -1,15 +1,13 @@
 class UserRestaurant < ActiveRecord::Base
-	belongs_to :user  
-	belongs_to :restaurant 
+  belongs_to :user  
+  belongs_to :restaurant 
 
-	validates :user_id, presence: true
-	validates :restaurant_id, presence: true, uniqueness: true
+  validates :user_id, presence: true
+  validates :restaurant_id, presence: true
+  # , uniqueness: true
+  scope :active, -> { where(favoriting: true) }
 
-
-	scope :active, -> { where(favoriting: true) }
-
-	def unfavorite
-		update favoriting: false
-	end
-
+  def unfavorite
+    update favoriting: false
+  end
 end
