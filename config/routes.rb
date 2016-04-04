@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get  '/unfavorite_foods/:food_id/:user_id'               => 'user_foods#stop_favoriting'
   get  '/favorite_foods/:user_id'                          => 'user_foods#favorite_foods'
 
-  post '/follow_users'                                     => 'follows#following'
+  post '/follow_users/:user_id'                            => 'follows#following'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
