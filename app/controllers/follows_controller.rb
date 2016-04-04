@@ -10,7 +10,7 @@ class FollowsController < ApplicationController
     if follow
       render json: { message: "You are now following #{target_id}" }, status: 200
     else 
-      render json: { message: "You already follow this person or restaurant" }, status: 200
+      render json: { message: "You already follow this person" }, status: 200
     end
   end
 
