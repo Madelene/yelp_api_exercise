@@ -1,15 +1,18 @@
 require 'spec_helper'
 require 'rails_helper'
-# require 'UserRestaurant'
 
 describe UserRestaurant do
+
+  it "should have a valid factory" do
+    FactoryGirl.build(:user_restaurant).should be_valid
+  end
+
   it "is invalid without a user_id" do
-    user_restaurant = UserRestaurant.new
-    user_restaurant.should_not be_valid
+    FactoryGirl.build(:user_restaurant, :user_id => "").should_not be_valid
   end
 
   it "is invalid without a restaurant_id" do
-    user_restaurant = UserRestaurant.new
-    user_restaurant.should_not be_valid
+    FactoryGirl.build(:user_restaurant, :restaurant_id => "").should_not be_valid
   end
+  
 end
