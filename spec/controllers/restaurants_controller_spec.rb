@@ -7,8 +7,11 @@ RSpec.describe RestaurantsController, :type => :controller do
       get :index
       expect(response.status).to eq(200)
     end
+
+    it "returns json format" do
+      get :index
+      expect(response.content_type).to eq "application/json"
+    end
   end
 
-
-  
 end
